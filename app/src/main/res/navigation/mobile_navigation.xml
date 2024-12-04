@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_finished">
+
+    <fragment
+        android:id="@+id/navigation_finished"
+        android:name="com.example.footer.ui.finished.FinishedFragment"
+        android:label="@string/title_finished"
+        tools:layout="@layout/fragment_finished" />
+
+    <fragment
+        android:id="@+id/navigation_wishlist"
+        android:name="com.example.footer.ui.wishlist.WishlistFragment"
+        android:label="@string/title_wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.footer.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

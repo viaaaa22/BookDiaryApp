@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_add_finished"
+    android:layout_width="match_parent"
+    android:layout_height="745dp"
+    android:background="@drawable/main_container_main">
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="413dp"
+        android:layout_height="872dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="-73dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/image_background" />
+
+    <LinearLayout
+        android:id="@+id/parent_top_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/header"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/header2"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/headline_text"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Input Finished Book"
+                android:textColor="#FFFFFFFF"
+                android:textSize="22dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/rectangle_image"
+        android:layout_width="305dp"
+        android:layout_height="564dp"
+        android:layout_marginTop="91dp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/edit_book_box"
+        android:scaleType="centerInside" />
+
+    <LinearLayout
+        android:id="@+id/parent_input"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="103dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp">
+
+        <LinearLayout
+            android:id="@+id/input"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Title"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/textfield"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/image_book_box"
+                android:clipToPadding="false"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp">
+
+                <EditText
+                    android:id="@+id/textfield_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Enter the finished book's title"
+                    android:textColorHint="#FF000000"
+                    android:textSize="14dp"
+                    android:background="@null"
+                    android:inputType="text" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parent_input1"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="175dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp">
+
+        <LinearLayout
+            android:id="@+id/input1"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/author_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Author"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/textfield1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/image_book_box"
+                android:clipToPadding="false"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp">
+
+                <EditText
+                    android:id="@+id/author_textfield_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Enter the name of the author"
+                    android:textColorHint="#FF000000"
+                    android:textSize="14dp"
+                    android:background="@null"
+                    android:inputType="text" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parent_input2"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="247dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp">
+
+        <LinearLayout
+            android:id="@+id/input2"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/finished_date_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Finished Date"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/textfield2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/image_book_box"
+                android:clipToPadding="false"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp">
+
+                <EditText
+                    android:id="@+id/finished_date_textfield_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="dd/mm/yyyy"
+                    android:textColorHint="#FF000000"
+                    android:textSize="14dp"
+                    android:background="@null"
+                    android:inputType="date" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parent_input3"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="318dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp">
+
+        <LinearLayout
+            android:id="@+id/input3"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/rate_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Rate"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/textfield3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/image_book_box"
+                android:clipToPadding="false"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp">
+
+                <EditText
+                    android:id="@+id/rate_textfield_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="0.0/5.0"
+                    android:textColorHint="#FF000000"
+                    android:textSize="14dp"
+                    android:background="@null"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parent_input4"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="390dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp">
+
+        <LinearLayout
+            android:id="@+id/input4"
+            android:layout_width="288dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/summary_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Summary"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/textfield4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/image_book_box"
+                android:clipToPadding="false"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="8dp">
+
+                <EditText
+                    android:id="@+id/summary_textfield_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="write your impression about this book"
+                    android:textColorHint="#FF000000"
+                    android:textSize="14dp"
+                    android:background="@null"
+                    android:inputType="textMultiLine"
+                    android:minLines="3" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/parent_input5"
+        android:layout_width="272dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="557dp"
+        android:layout_gravity="top|center_horizontal"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/input5"
+            android:layout_width="264dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:gravity="left|center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Book’s Cover"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/book_cover_image"
+        android:layout_width="99dp"
+        android:layout_height="144.11dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="505dp"
+        android:background="@drawable/image_book_cover"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/input_book_cover_text"
+        android:layout_width="100dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="75dp"
+        android:layout_gravity="top|center_horizontal"
+        android:gravity="center"
+        android:text="input \nbook cover"
+        android:textColor="#FF7F7F7F"
+        android:textSize="12dp" />
+
+</FrameLayout>

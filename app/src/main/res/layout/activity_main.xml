@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_main"
+    android:layout_width="match_parent"
+    android:layout_height="745dp"
+    android:background="@drawable/main_container_main">
+
+    <ImageView
+        android:id="@+id/image_view_background"
+        android:layout_width="413dp"
+        android:layout_height="872dp"
+        android:layout_gravity="top|left"
+        android:layout_marginTop="-73dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/main_image_view_background" />
+
+    <TextView
+        android:id="@+id/text_view_book_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="179.5dp"
+        android:fontFamily="@font/rochester"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Book's Diary"
+        android:textColor="#FF865050"
+        android:textSize="64dp" />
+
+    <TextView
+        android:id="@+id/text_view_reading_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="301.33dp"
+        android:fontFamily="@font/rubik_doodle_shadow"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lineHeight="30dp"
+        android:text="“Create Reading List, \nRecord Every \nBook Completed.”"
+        android:textColor="#FF403535"
+        android:textSize="24dp" />
+
+    <LinearLayout
+        android:id="@+id/container_button_inner"
+        android:layout_width="288dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="435dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <LinearLayout
+            android:id="@+id/container_button_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_container_button_primary"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingTop="10dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/text_view_button_next"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Next"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

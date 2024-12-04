@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_sign_up"
+    android:layout_width="match_parent"
+    android:layout_height="745dp"
+    android:background="@drawable/main_container_main">
+
+    <ImageView
+        android:id="@+id/img_background_login"
+        android:layout_width="413dp"
+        android:layout_height="872dp"
+        android:layout_gravity="top|left"
+        android:layout_marginTop="-29dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/image_background_login" />
+
+    <LinearLayout
+        android:id="@+id/container_input_email"
+        android:layout_width="288dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="198dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/text_title_email"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="left|center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Email"
+            android:textColor="#FF000000"
+            android:textSize="14dp"
+            tools:ignore="TextSizeCheck" />
+
+        <LinearLayout
+            android:id="@+id/container_text_field_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/image_book_box"
+            android:clipToPadding="false"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="8dp">
+
+            <EditText
+                android:id="@+id/text_placeholder_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress"
+                android:textColor="#FF000000"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_input_username"
+        android:layout_width="288dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="272dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/text_title_username"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="left|center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Username"
+            android:textColor="#FF000000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/container_text_field_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/image_book_box"
+            android:clipToPadding="false"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="8dp">
+
+            <EditText
+                android:id="@+id/text_placeholder_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Enter your username"
+                android:inputType="text"
+                android:textColor="#FF000000"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_input_password"
+        android:layout_width="288dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="346dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/text_title_password"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="left|center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Password"
+            android:textColor="#FF000000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/container_text_field_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/image_book_box"
+            android:clipToPadding="false"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="8dp">
+
+            <EditText
+                android:id="@+id/text_placeholder_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Enter your password"
+                android:inputType="textPassword"
+                android:textColor="#FF000000"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="98dp"
+        android:layout_marginRight="0.5dp"
+        android:layout_marginBottom="-18dp"
+        android:fontFamily="@font/rochester"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Sign Up"
+        android:textColor="#FF865050"
+        android:textSize="50dp" />
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="468dp"
+        android:layout_gravity="top|left"
+        android:backgroundTint="#FF4A1515"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Sign Up"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="532dp"
+        android:layout_gravity="top|left"
+        android:backgroundTint="#FF4A1515"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Cancel"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16dp" />
+</FrameLayout>

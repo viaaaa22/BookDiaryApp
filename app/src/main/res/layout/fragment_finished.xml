@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container_finished"
+        android:layout_width="match_parent"
+        android:layout_height="745dp"
+        android:background="@drawable/main_container_main"
+        tools:context=".ui.finished.FinishedFragment">>
+
+        <ImageView
+            android:id="@+id/image_background"
+            android:layout_width="420dp"
+            android:layout_height="845dp"
+            android:layout_marginLeft="-1dp"
+            android:layout_marginTop="-5dp"
+            android:layout_gravity="top|left"
+            android:scaleType="centerInside"
+            android:src="@drawable/image_background" />
+
+        <TextView
+            android:id="@+id/text_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginLeft="159dp"
+            android:layout_marginTop="324.5dp"
+            android:layout_marginBottom="-2.5dp"
+            android:layout_gravity="top|left"
+            android:gravity="left|center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text=" "
+            android:textColor="#FF000000"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:id="@+id/container_top_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:background="@drawable/header"
+            android:gravity="left|top"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/container_top_app_bar_inner"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@drawable/header2"
+                android:clipToPadding="false"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/text_headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Finished Books"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="22dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/container_finished_box2"
+                    android:layout_width="317dp"
+                    android:layout_height="170.05dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="28dp">
+
+                    <ImageView
+                        android:id="@+id/image_box2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/image_book_box"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:id="@+id/image_book_cover2"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="14.41dp"
+                        android:layout_marginBottom="11.53dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/image_book_cover"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/text_rate2"
+                        android:layout_width="match_parent"
+                        android:layout_height="26.9dp"
+                        android:layout_marginLeft="151dp"
+                        android:layout_marginRight="54dp"
+                        android:layout_marginTop="131.62dp"
+                        android:layout_marginBottom="11.53dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Rate         0.0/5.0"
+                        android:textColor="#FF000000"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/text_summary2"
+                        android:layout_width="165dp"
+                        android:layout_height="28.82dp"
+                        android:layout_marginLeft="131dp"
+                        android:layout_marginRight="21dp"
+                        android:layout_marginTop="100.88dp"
+                        android:layout_marginBottom="40.35dp"
+                        android:gravity="center_horizontal|top"
+                        android:includeFontPadding="false"
+                        android:lineHeight="15dp"
+                        android:text="summary....................................................................................."
+                        android:textColor="#FFB2AAAA"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/text_finished_date2"
+                        android:layout_width="158dp"
+                        android:layout_height="26.9dp"
+                        android:layout_marginLeft="131dp"
+                        android:layout_marginRight="28dp"
+                        android:layout_marginTop="72.05dp"
+                        android:layout_marginBottom="71.09dp"
+                        android:gravity="center_horizontal|top"
+                        android:includeFontPadding="false"
+                        android:lineHeight="28dp"
+                        android:text="finished date     dd/mm/yyy"
+                        android:textColor="#FF865050"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:id="@+id/text_author2"
+                        android:layout_width="43dp"
+                        android:layout_height="26.9dp"
+                        android:layout_marginLeft="188dp"
+                        android:layout_marginRight="86dp"
+                        android:layout_marginTop="49dp"
+                        android:layout_gravity="top"
+                        android:gravity="center_horizontal|top"
+                        android:includeFontPadding="false"
+                        android:lineHeight="28dp"
+                        android:text="Author"
+                        android:textColor="#FF300E0E"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:id="@+id/text_title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginLeft="184dp"
+                        android:layout_marginRight="84dp"
+                        android:layout_marginTop="14.82dp"
+                        android:layout_marginBottom="-0.55dp"
+                        android:layout_gravity="top"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Title"
+                        android:textColor="#FF4A1515"
+                        android:textSize="22dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/container_finished_box1"
+                    android:layout_width="317dp"
+                    android:layout_height="170.05dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="28dp">
+
+                    <ImageView
+                        android:id="@+id/image_box1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/image_book_box"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:id="@+id/image_book_cover1"
+                        android:layout_width="99dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="14.41dp"
+                        android:layout_marginBottom="11.53dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/image_book_cover"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/text_rate1"
+                        android:layout_width="match_parent"
+                        android:layout_height="26.9dp"
+                        android:layout_marginLeft="151dp"
+                        android:layout_marginRight="54dp"
+                        android:layout_marginTop="131.62dp"
+                        android:layout_marginBottom="11.53dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Rate         0.0/5.0"
+                        android:textColor="#FF000000"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/text_summary1"
+                        android:layout_width="165dp"
+                        android:layout_height="28.82dp"
+                        android:layout_marginLeft="131dp"
+                        android:layout_marginRight="21dp"
+                        android:layout_marginTop="100.88dp"
+                        android:layout_marginBottom="40.35dp"
+                        android:gravity="center_horizontal|top"
+                        android:includeFontPadding="false"
+                        android:lineHeight="15dp"
+                        android:text="summary....................................................................................."
+                        android:textColor="#FFB2AAAA"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/text_finished_date1"
+                        android:layout_width="158dp"
+                        android:layout_height="26.9dp"
+                        android:layout_marginLeft="131dp"
+                        android:layout_marginRight="28dp"
+                        android:layout_marginTop="72.05dp"
+                        android:layout_marginBottom="71.09dp"
+                        android:gravity="center_horizontal|top"
+                        android:includeFontPadding="false"
+                        android:lineHeight="28dp"
+                        android:text="finished date     dd/mm/yyy"
+                        android:textColor="#FF865050"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:id="@+id/text_author1"
+                        android:layout_width="43dp"
+                        android:layout_height="26.9dp"
+                        android:layout_marginLeft="188dp"
+                        android:layout_marginRight="86dp"
+                        android:layout_marginTop="49dp"
+                        android:layout_gravity="top"
+                        android:gravity="center_horizontal|top"
+                        android:includeFontPadding="false"
+                        android:lineHeight="28dp"
+                        android:text="Author"
+                        android:textColor="#FF300E0E"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:id="@+id/text_title1"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginLeft="184dp"
+                        android:layout_marginRight="84dp"
+                        android:layout_marginTop="14.82dp"
+                        android:layout_marginBottom="-0.55dp"
+                        android:layout_gravity="top"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Title"
+                        android:textColor="#FF4A1515"
+                        android:textSize="22dp" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageButton
+            android:id="@+id/btn_add_wishlist"
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="100dp"
+            android:background="@null"
+            android:contentDescription="Add to wishlist"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/button_add" />
+    </FrameLayout>
