@@ -54,170 +54,89 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/rectangle_background"
-        android:layout_width="305dp"
-        android:layout_height="564dp"
-        android:layout_marginTop="91dp"
-        android:layout_gravity="top|center_horizontal"
-        android:background="@drawable/edit_book_box"
-        android:scaleType="centerInside" />
-
-    <LinearLayout
-        android:id="@+id/title_container"
-        android:layout_width="272dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="103dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingHorizontal="12dp">
-
-        <TextView
-            android:id="@+id/title_label"
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:gravity="left|center_vertical"
-            android:text="Title"
-            android:textColor="#FFFFFFFF"
-            android:textSize="20dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="80dp">
 
         <LinearLayout
-            android:id="@+id/title_content"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/image_book_box"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/book_cover_info"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"/>
 
             <TextView
-                android:id="@+id/title_text"
+                android:id="@+id/book_title_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="whistlist book's title"
-                android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/book_author_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/book_link_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:autoLink="web"/>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
-        android:id="@+id/author_container"
-        android:layout_width="272dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="175dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingHorizontal="12dp">
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/author_label"
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:gravity="left|center_vertical"
-            android:text="Author"
-            android:textColor="#FFFFFFFF"
-            android:textSize="20dp" />
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_medium"
+            android:backgroundTint="#4A1515"/>
 
-        <LinearLayout
-            android:id="@+id/author_content"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/image_book_box"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp">
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Delete"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_medium"
+            android:backgroundTint="#4A1515"/>
 
-            <TextView
-                android:id="@+id/author_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Author's name"
-                android:textColor="#FF000000"
-                android:textSize="14dp" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_medium"
+            android:backgroundTint="#4A1515"/>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/link_container"
-        android:layout_width="272dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="247dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingHorizontal="12dp">
-
-        <TextView
-            android:id="@+id/link_label"
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:gravity="left|center_vertical"
-            android:text="Link"
-            android:textColor="#FFFFFFFF"
-            android:textSize="20dp" />
-
-        <LinearLayout
-            android:id="@+id/link_content"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/image_book_box"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp">
-
-            <TextView
-                android:id="@+id/link_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Book's link"
-                android:textColor="#FF000000"
-                android:textSize="14dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/book_cover_container"
-        android:layout_width="272dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="557dp"
-        android:layout_gravity="top|center_horizontal"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/book_cover_label"
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:layout_marginHorizontal="12dp"
-            android:gravity="left|center_vertical"
-            android:text="Book's Cover"
-            android:textColor="#FFFFFFFF"
-            android:textSize="20dp" />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/book_cover_image"
-        android:layout_width="99dp"
-        android:layout_height="144.11dp"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="505dp"
-        android:background="@drawable/image_book_cover"
-        android:scaleType="centerInside" />
-
-    <TextView
-        android:id="@+id/book_cover_text"
-        android:layout_width="100dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginLeft="75dp"
-        android:layout_gravity="top|center_horizontal"
-        android:gravity="center"
-        android:text="book cover"
-        android:textColor="#FF7F7F7F"
-        android:textSize="12dp" />
 
     <FrameLayout
         android:id="@+id/navigation_container"

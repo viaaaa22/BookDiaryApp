@@ -91,13 +91,14 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="12dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/text_input_title_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter the finished book's title"
+                android:hint="Enter the wishlist book's title"
                 android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
@@ -129,13 +130,14 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="12dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/text_input_author_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter the name of the author"
+                android:hint="Enter the name of the author"
                 android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
@@ -167,13 +169,14 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="12dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/text_input_link_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="where to find this book"
+                android:hint="where to find this book"
                 android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
@@ -218,5 +221,34 @@
         android:text="input \nbook cover"
         android:textColor="#FF7F7F7F"
         android:textSize="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_medium"
+            android:backgroundTint="#4A1515"/>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_medium"
+            android:backgroundTint="#4A1515"/>
+    </LinearLayout>
 
 </FrameLayout>

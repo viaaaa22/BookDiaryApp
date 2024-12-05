@@ -58,11 +58,11 @@
         android:id="@+id/image_ellipse"
         android:layout_width="138dp"
         android:layout_height="138dp"
+        android:layout_gravity="top|center_horizontal"
         android:layout_marginLeft="0.5dp"
         android:layout_marginTop="122dp"
-        android:layout_gravity="top|center_horizontal"
-        tools:srcCompat="@tools:sample/avatars"
-        android:scaleType="centerInside" />
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_reading" />
 
     <TextView
         android:id="@+id/text_username"
@@ -89,6 +89,19 @@
         android:backgroundTint="#FF4A1515"
         android:fontFamily="@font/roboto_medium"
         android:text="Account Settings"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="600dp"
+        android:layout_gravity="top|left"
+        android:backgroundTint="#FF4A1515"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Logout"
         android:textColor="#FFFFFFFF"
         android:textSize="16dp" />
 

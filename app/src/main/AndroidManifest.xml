@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -21,6 +23,42 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+            
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".NavButton"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.ProfileSetting"
+            android:exported="false" />
+        <activity 
+            android:name=".ui.finished.AddFinished" 
+            android:exported="false" />
+        <activity 
+            android:name=".ui.wishlist.AddWishlist"
+            android:exported="false" />
+        <activity
+            android:name=".ui.finished.InfoFinished"
+            android:exported="false" />
+        <activity
+            android:name=".ui.finished.EditFinished"
+            android:exported="false" />
+        <activity 
+             android:name=".ui.wishlist.InfoWishlist"
+             android:exported="false"/>
+        <activity 
+            android:name=".ui.wishlist.EditWishlist" 
+            android:exported="false"/>
+        <activity
+            android:name=".ui.profile.EditProfile"
+            android:exported="false">
         </activity>
     </application>
 

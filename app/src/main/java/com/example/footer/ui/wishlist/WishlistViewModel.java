@@ -8,9 +8,10 @@ public class WishlistViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
+
     public WishlistViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Wishlist fragment");
+        mText.setValue("Daftar Buku Yang Ingin Dibaca");
     }
 
     public LiveData<String> getText() {

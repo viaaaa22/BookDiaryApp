@@ -94,13 +94,14 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="12dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/input_textfield_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter the finished book's title"
+                android:hint="Enter the finished book's title"
                 android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
@@ -132,13 +133,14 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="12dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/input_textfield_text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter the name of the author"
+                android:hint="Enter the name of the author"
                 android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
@@ -170,13 +172,15 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="12dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/input_textfield_text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="dd/mm/yyyy"
+                android:hint="dd/mm/yyyy"
+                android:inputType="date"
                 android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
@@ -202,19 +206,19 @@
         <LinearLayout
             android:id="@+id/input_textfield3"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/image_book_box"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:paddingHorizontal="12dp">
 
-            <TextView
+            <RatingBar
                 android:id="@+id/input_textfield_text3"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0.0/5.0"
-                android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:numStars="5"
+                android:stepSize="0.1"
+                style="?android:attr/ratingBarStyleSmall" />
         </LinearLayout>
     </LinearLayout>
 
@@ -247,13 +251,16 @@
             android:paddingHorizontal="12dp"
             android:paddingVertical="6dp">
 
-            <TextView
+            <EditText
                 android:id="@+id/input_textfield_text4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Write your impression about this book"
+                android:hint="Write your impression about this book"
                 android:textColor="#FF000000"
-                android:textSize="14dp" />
+                android:textSize="14dp"
+                android:minLines="3"
+                android:gravity="top"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
@@ -299,5 +306,34 @@
         android:text="input \nbook cover"
         android:textColor="#FF7F7F7F"
         android:textSize="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_medium"
+            android:backgroundTint="#4A1515"/>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/roboto_medium"
+            android:backgroundTint="#4A1515"/>
+    </LinearLayout>
 
 </FrameLayout>

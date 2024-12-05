@@ -46,7 +46,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // Create Account table
         String CREATE_ACCOUNT_TABLE = "CREATE TABLE " + TABLE_ACCOUNT + "("
                 + KEY_ID_USER + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + KEY_EMAIL + " TEXT,"
+                + KEY_EMAIL + " TEXT UNIQUE,"
                 + KEY_USERNAME + " TEXT,"
                 + KEY_PASSWORD + " TEXT" + ")";
         db.execSQL(CREATE_ACCOUNT_TABLE);
@@ -136,5 +136,76 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return count > 0;
+    }
+
+    // Tambahkan fungsi untuk cek email
+    public boolean isEmailExists(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {KEY_ID_USER};
+        String selection = KEY_EMAIL + "=?";
+        String[] selectionArgs = {email};
+        Cursor cursor = db.query(TABLE_ACCOUNT, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+        cursor.close();
+        db.close();
+        return count > 0;
+    }
+
+    // Tambahkan method ini di dalam class DatabaseHandler
+    public void deleteUser(int userId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        
+        // Hapus data user dari tabel account
+        db.delete(TABLE_ACCOUNT, KEY_ID_USER + "=?", new String[]{String.valueOf(userId)});
+        
+        // Hapus data terkait di tabel finished
+        db.delete(TABLE_FINISHED, KEY_ID_USER + "=?", new String[]{String.valueOf(userId)});
+        
+        // Hapus data terkait di tabel wishlist
+        db.delete(TABLE_WISHLIST, KEY_ID_USER + "=?", new String[]{String.valueOf(userId)});
+        
+        db.close();
+    }
+
+    // Tambahkan method ini untuk mendapatkan email berdasarkan userId
+    public String getEmailByUserId(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {KEY_EMAIL};
+        String selection = KEY_ID_USER + "=?";
+        String[] selectionArgs = {String.valueOf(userId)};
+        Cursor cursor = db.query(TABLE_ACCOUNT, columns, selection, selectionArgs, null, null, null);
+        String email = "";
+        if (cursor.moveToFirst()) {
+            email = cursor.getString(0);
+        }
+        cursor.close();
+        db.close();
+        return email;
+    }
+
+    public boolean updateUser(String oldUsername, String newUsername, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_USERNAME, newUsername);
+        values.put(KEY_PASSWORD, newPassword);
+        
+        int result = db.update(TABLE_ACCOUNT, 
+                              values, 
+                              KEY_USERNAME + "=?", 
+                              new String[]{oldUsername});
+        return result > 0;
+    }
+
+    // Tambahkan method baru untuk update email
+    public boolean updateEmail(int userId, String newEmail) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_EMAIL, newEmail);
+        
+        int result = db.update(TABLE_ACCOUNT, 
+                              values, 
+                              KEY_ID_USER + "=?", 
+                              new String[]{String.valueOf(userId)});
+        return result > 0;
     }
 }

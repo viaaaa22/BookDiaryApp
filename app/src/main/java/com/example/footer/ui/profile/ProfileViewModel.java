@@ -6,14 +6,21 @@ import androidx.lifecycle.ViewModel;
 
 public class ProfileViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<String> username;
 
     public ProfileViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is profile fragment");
+        username = new MutableLiveData<>();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void setUsername(String name) {
+        username.setValue(name);
+    }
+
+    public LiveData<String> getUsername() {
+        return username;
+    }
+
+    public void logout() {
+        username.setValue("");
     }
 }
