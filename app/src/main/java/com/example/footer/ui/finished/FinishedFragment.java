@@ -1,8 +1,9 @@
 package com.example.footer.ui.finished;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -25,7 +26,9 @@ import com.example.footer.databinding.FragmentFinishedBinding;
 public class FinishedFragment extends Fragment {
 
     private FragmentFinishedBinding binding;
+    private DatabaseHandler db;
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                             ViewGroup container, Bundle savedInstanceState) {
         FinishedViewModel finishedViewModel =
@@ -33,14 +36,29 @@ public class FinishedFragment extends Fragment {
 
         binding = FragmentFinishedBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        
+        db = new DatabaseHandler(getContext());
 
-        binding.btnAddWishlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        // Inisialisasi views setelah binding
+        View btnAddWishlist = root.findViewById(R.id.btn_add_wishlist);
+        if (btnAddWishlist != null) {
+            btnAddWishlist.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), AddFinished.class);
                 startActivity(intent);
-            }
-        });
+            });
+        }
+
+        // Ambil data user
+        SharedPreferences prefs = requireActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String username = prefs.getString("username", "");
+        int userId = db.getUserId(username);
+
+        // Update jumlah buku
+        TextView countView = root.findViewById(R.id.text_finished_count);
+        if (countView != null) {
+            int finishedCount = db.getFinishedBooksCount(userId);
+            countView.setText(String.valueOf(finishedCount));
+        }
 
         loadFinishedBooks();
 
@@ -48,48 +66,47 @@ public class FinishedFragment extends Fragment {
     }
 
     private void loadFinishedBooks() {
-        SQLiteDatabase db = new DatabaseHandler(getContext()).getReadableDatabase();
-        Cursor cursor = db.query("finished", null, null, null, null, null, null);
-        
+        SharedPreferences prefs = requireActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String username = prefs.getString("username", "");
+        int userId = db.getUserId(username);
+
+        // Load buku-buku yang selesai dibaca
+        Cursor cursor = db.getFinishedBooksByUserId(userId);
         LinearLayout container = binding.getRoot().findViewById(R.id.container_books);
-        container.removeAllViews();
+        if (container != null) {
+            container.removeAllViews();
 
-        while (cursor.moveToNext()) {
-            View bookView = LayoutInflater.from(getContext())
-                .inflate(R.layout.item_finished_book, container, false);
-            
-            // Set data ke views
-            TextView titleView = bookView.findViewById(R.id.book_title);
-            TextView authorView = bookView.findViewById(R.id.book_author);
-            TextView dateView = bookView.findViewById(R.id.finished_date);
-            RatingBar ratingBar = bookView.findViewById(R.id.rating_bar);
-            TextView summaryView = bookView.findViewById(R.id.book_summary);
-            ImageView coverView = bookView.findViewById(R.id.book_cover);
+            while (cursor.moveToNext()) {
+                View bookView = LayoutInflater.from(getContext())
+                    .inflate(R.layout.item_finished_book, container, false);
+                
+                TextView titleView = bookView.findViewById(R.id.book_title);
+                TextView authorView = bookView.findViewById(R.id.book_author);
+                TextView dateView = bookView.findViewById(R.id.finished_date);
+                RatingBar ratingBar = bookView.findViewById(R.id.rating_bar);
+                TextView summaryView = bookView.findViewById(R.id.book_summary);
+                ImageView coverView = bookView.findViewById(R.id.book_cover);
 
-            // Simpan data saat ini dalam variabel final
-            final int id = cursor.getInt(cursor.getColumnIndex("id_finished"));
-            final String title = cursor.getString(cursor.getColumnIndex("title_finished"));
-            final String author = cursor.getString(cursor.getColumnIndex("author_finished"));
-            final String date = cursor.getString(cursor.getColumnIndex("date_finished"));
-            final float rate = cursor.getFloat(cursor.getColumnIndex("rate"));
-            final String summary = cursor.getString(cursor.getColumnIndex("summary"));
-            final byte[] coverBytes = cursor.getBlob(cursor.getColumnIndex("cover_finished"));
+                final int id = cursor.getInt(cursor.getColumnIndex("id_finished"));
+                final String title = cursor.getString(cursor.getColumnIndex("title_finished"));
+                final String author = cursor.getString(cursor.getColumnIndex("author_finished"));
+                final String date = cursor.getString(cursor.getColumnIndex("date_finished"));
+                final float rate = cursor.getFloat(cursor.getColumnIndex("rate"));
+                final String summary = cursor.getString(cursor.getColumnIndex("summary"));
+                final byte[] coverBytes = cursor.getBlob(cursor.getColumnIndex("cover_finished"));
 
-            titleView.setText(title);
-            authorView.setText(author);
-            dateView.setText(date);
-            ratingBar.setRating(rate);
-            summaryView.setText(summary);
+                titleView.setText(title);
+                authorView.setText(author);
+                dateView.setText(date);
+                ratingBar.setRating(rate);
+                summaryView.setText(summary);
 
-            if (coverBytes != null && coverBytes.length > 0) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(coverBytes, 0, coverBytes.length);
-                coverView.setImageBitmap(bitmap);
-            }
+                if (coverBytes != null && coverBytes.length > 0) {
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(coverBytes, 0, coverBytes.length);
+                    coverView.setImageBitmap(bitmap);
+                }
 
-            // Tambahkan onClick listener
-            bookView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+                bookView.setOnClickListener(v -> {
                     Intent intent = new Intent(getActivity(), InfoFinished.class);
                     intent.putExtra("id_finished", id);
                     intent.putExtra("title", title);
@@ -99,12 +116,11 @@ public class FinishedFragment extends Fragment {
                     intent.putExtra("summary", summary);
                     intent.putExtra("cover", coverBytes);
                     startActivity(intent);
-                }
-            });
-            
-            container.addView(bookView);
+                });
+                
+                container.addView(bookView);
+            }
         }
-        
         cursor.close();
     }
 

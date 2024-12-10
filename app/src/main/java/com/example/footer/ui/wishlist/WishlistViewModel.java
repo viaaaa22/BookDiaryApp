@@ -6,15 +6,17 @@ import androidx.lifecycle.ViewModel;
 
 public class WishlistViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
-
+    private final MutableLiveData<Integer> wishlistCount;
 
     public WishlistViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("Daftar Buku Yang Ingin Dibaca");
+        wishlistCount = new MutableLiveData<>();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void setWishlistCount(int count) {
+        wishlistCount.setValue(count);
+    }
+
+    public LiveData<Integer> getWishlistCount() {
+        return wishlistCount;
     }
 }

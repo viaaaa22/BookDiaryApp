@@ -2,6 +2,7 @@ package com.example.footer.ui.wishlist;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -88,8 +89,13 @@ public class AddWishlist extends AppCompatActivity {
             return;
         }
 
+        SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String username = prefs.getString("username", "");
         DatabaseHandler dbHandler = new DatabaseHandler(this);
+        int userId = dbHandler.getUserId(username);
+
         ContentValues values = new ContentValues();
+        values.put("id_user", userId);
         values.put("title_whistlist", title);
         values.put("author_whistlist", author);
         values.put("link_whistlist", link);

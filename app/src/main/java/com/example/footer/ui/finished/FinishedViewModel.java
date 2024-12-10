@@ -5,15 +5,27 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class FinishedViewModel extends ViewModel {
-
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<Integer> finishedCount;
+    private final MutableLiveData<Integer> wishlistCount;
 
     public FinishedViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is finished fragment");
+        finishedCount = new MutableLiveData<>();
+        wishlistCount = new MutableLiveData<>();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void setFinishedCount(int count) {
+        finishedCount.setValue(count);
+    }
+
+    public void setWishlistCount(int count) {
+        wishlistCount.setValue(count);
+    }
+
+    public LiveData<Integer> getFinishedCount() {
+        return finishedCount;
+    }
+
+    public LiveData<Integer> getWishlistCount() {
+        return wishlistCount;
     }
 }

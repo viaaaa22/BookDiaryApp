@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="745dp"
+    android:layout_height="match_parent"
     android:background="@drawable/main_container_main"
     tools:context=".ui.wishlist.WishlistFragment">
 
@@ -13,16 +13,13 @@
         android:id="@+id/image_background"
         android:layout_width="413dp"
         android:layout_height="872dp"
-        android:layout_marginLeft="-3dp"
-        android:layout_marginTop="9dp"
         android:layout_gravity="top|left"
         android:scaleType="centerInside"
         android:src="@drawable/image_background" />
 
-
     <LinearLayout
         android:id="@+id/container_top_app_bar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|left"
         android:background="@drawable/header"
@@ -30,32 +27,55 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/container_top_app_bar_inner"
-            android:layout_width="match_parent"
+            android:layout_width="413dp"
             android:layout_height="64dp"
             android:background="@drawable/header2"
             android:clipToPadding="false"
             android:gravity="left|center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:paddingTop="8dp"
-            android:paddingRight="4dp"
-            android:paddingBottom="8dp">
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
 
             <TextView
                 android:id="@+id/text_headline"
-                android:layout_width="match_parent"
-                android:layout_height="28dp"
-                android:layout_marginLeft="6dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:singleLine="true"
+                android:gravity="center"
                 android:text="Wishlist"
                 android:textColor="#FFFFFFFF"
                 android:textSize="22dp" />
+        </LinearLayout>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/image_book_box"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/text_wishlist_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="24dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wishlist Books"
+                android:textSize="16dp"/>
         </LinearLayout>
     </LinearLayout>
 

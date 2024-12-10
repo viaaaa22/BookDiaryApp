@@ -9,7 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
+import android.widget.ImageButton;
 
+import com.example.footer.MainActivity;
 import com.example.footer.NavButton;
 import com.example.footer.R;
 import com.example.footer.DatabaseHandler;
@@ -66,8 +68,8 @@ public class ProfileSetting extends AppCompatActivity {
                     editor.clear();
                     editor.apply();
                     
-                    // Kembali ke halaman login
-                    Intent intent = new Intent(ProfileSetting.this, NavButton.class);
+                    // Kembali ke halaman MainActivity
+                    Intent intent = new Intent(ProfileSetting.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
@@ -75,5 +77,8 @@ public class ProfileSetting extends AppCompatActivity {
                 .setNegativeButton("Tidak", null)
                 .show();
         });
+
+        ImageButton backButton = findViewById(R.id.btn_back);
+        backButton.setOnClickListener(v -> finish());
     }
 }

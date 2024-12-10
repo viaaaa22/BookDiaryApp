@@ -243,10 +243,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="dd/mm/yyyy"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
                     android:textColorHint="#FF000000"
                     android:textSize="14dp"
-                    android:background="@null"
-                    android:inputType="date" />
+                    android:background="@null" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

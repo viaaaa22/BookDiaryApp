@@ -3,6 +3,7 @@ package com.example.footer.ui.finished;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -48,6 +49,7 @@ public class AddFinished extends AppCompatActivity {
 
         // Setup DatePicker untuk finished date
         dateInput.setOnClickListener(v -> showDatePickerDialog());
+        dateInput.setFocusable(false);
 
         // Setup image picker untuk cover book
         bookCoverImage.setOnClickListener(v -> openFileChooser());
@@ -132,6 +134,7 @@ public class AddFinished extends AppCompatActivity {
         String rateStr = rateInput.getText().toString().trim();
         String summary = summaryInput.getText().toString().trim();
 
+        // Validasi input
         if (title.isEmpty() || author.isEmpty() || date.isEmpty() || 
             rateStr.isEmpty() || summary.isEmpty() || coverImageBytes == null) {
             Toast.makeText(this, "Semua field harus diisi!", Toast.LENGTH_SHORT).show();
@@ -144,9 +147,15 @@ public class AddFinished extends AppCompatActivity {
             return;
         }
 
+        // Ambil userId dari SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String username = prefs.getString("username", "");
+        int userId = dbHandler.getUserId(username);
+
         // Simpan ke database
         SQLiteDatabase db = dbHandler.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put("id_user", userId); // Tambahkan userId
         values.put("title_finished", title);
         values.put("author_finished", author);
         values.put("date_finished", date);

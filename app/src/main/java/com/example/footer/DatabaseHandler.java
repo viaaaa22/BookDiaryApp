@@ -208,4 +208,73 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                               new String[]{String.valueOf(userId)});
         return result > 0;
     }
+
+    public int getFinishedBooksCount(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_FINISHED, 
+            new String[]{"COUNT(*)"},
+            KEY_ID_USER + "=?",
+            new String[]{String.valueOf(userId)},
+            null, null, null);
+        
+        int count = 0;
+        if (cursor.moveToFirst()) {
+            count = cursor.getInt(0);
+        }
+        cursor.close();
+        return count;
+    }
+
+    public int getWishlistBooksCount(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(TABLE_WISHLIST, 
+            new String[]{"COUNT(*)"},
+            KEY_ID_USER + "=?",
+            new String[]{String.valueOf(userId)},
+            null, null, null);
+        
+        int count = 0;
+        if (cursor.moveToFirst()) {
+            count = cursor.getInt(0);
+        }
+        cursor.close();
+        return count;
+    }
+
+    public boolean updateUserProfile(int userId, String newEmail, String newUsername, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        
+        values.put(KEY_EMAIL, newEmail);
+        values.put(KEY_USERNAME, newUsername);
+        values.put(KEY_PASSWORD, newPassword);
+        
+        int result = db.update(TABLE_ACCOUNT, 
+                             values, 
+                             KEY_ID_USER + "=?", 
+                             new String[]{String.valueOf(userId)});
+        return result > 0;
+    }
+
+    public Cursor getFinishedBooksByUserId(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query(TABLE_FINISHED,
+                null,
+                KEY_ID_USER + "=?",
+                new String[]{String.valueOf(userId)},
+                null,
+                null,
+                KEY_DATE_FINISHED + " DESC");
+    }
+
+    public Cursor getWishlistBooksByUserId(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query(TABLE_WISHLIST,
+                null,
+                KEY_ID_USER + "=?",
+                new String[]{String.valueOf(userId)},
+                null,
+                null,
+                KEY_TITLE_WISHLIST + " ASC");
+    }
 }

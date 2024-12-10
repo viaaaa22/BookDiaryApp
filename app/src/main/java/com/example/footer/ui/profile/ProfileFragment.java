@@ -16,11 +16,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.footer.MainActivity;
 import com.example.footer.R;
+import com.example.footer.DatabaseHandler;
 import com.example.footer.databinding.FragmentProfileBinding;
 
 public class ProfileFragment extends Fragment {
 
     private FragmentProfileBinding binding;
+    private DatabaseHandler db;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        db = new DatabaseHandler(requireContext());
+
         // Ambil username dari SharedPreferences
         SharedPreferences prefs = requireActivity().getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String username = prefs.getString("username", "");
@@ -37,6 +41,16 @@ public class ProfileFragment extends Fragment {
         // Set username ke TextView
         TextView usernameText = binding.textUsername;
         usernameText.setText(username);
+
+        int userId = db.getUserId(username);
+        int finishedCount = db.getFinishedBooksCount(userId);
+        int wishlistCount = db.getWishlistBooksCount(userId);
+
+        TextView finishedBooksText = binding.textFinishedBooks;
+        TextView wishlistBooksText = binding.textWishlistBooks;
+
+        finishedBooksText.setText(String.valueOf(finishedCount));
+        wishlistBooksText.setText(String.valueOf(wishlistCount));
 
         // Tambahkan ini untuk menangani klik button Account Settings
         binding.btnAccountSettings.setOnClickListener(new View.OnClickListener() {

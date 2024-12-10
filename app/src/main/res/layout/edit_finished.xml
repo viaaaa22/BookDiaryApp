@@ -177,7 +177,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="dd/mm/yyyy"
-                android:inputType="date"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none"
                 android:textColor="#FF000000"
                 android:textSize="14dp"
                 android:background="@null" />
@@ -212,13 +214,15 @@
             android:gravity="center"
             android:paddingHorizontal="12dp">
 
-            <RatingBar
+            <EditText
                 android:id="@+id/input_textfield_text3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:stepSize="0.1"
-                style="?android:attr/ratingBarStyleSmall" />
+                android:hint="0.0/5.0"
+                android:inputType="numberDecimal"
+                android:textColor="#FF000000"
+                android:textSize="14dp"
+                android:background="@null" />
         </LinearLayout>
     </LinearLayout>
 
